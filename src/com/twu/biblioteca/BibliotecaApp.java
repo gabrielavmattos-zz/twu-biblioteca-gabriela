@@ -25,4 +25,12 @@ public class BibliotecaApp {
     public List getListBooks() {
         return books;
     }
+
+    public String menu(int i) {
+
+        if (i == 1) { // Option 1: List books
+            return("List Books");
+        }
+        return "";
+    }
 }

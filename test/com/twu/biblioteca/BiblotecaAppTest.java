@@ -36,5 +36,14 @@ public class BiblotecaAppTest {
         assertEquals(booksExpected, app.getListBooks());
     }
 
+    @Test
+    public void selectOptionOneMenu() {
+
+        BibliotecaApp app = new BibliotecaApp();
+
+        assertEquals("List Books", app.menu(1));
+
+
+   }
 
 }
