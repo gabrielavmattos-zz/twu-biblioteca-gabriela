@@ -2,6 +2,10 @@ package com.twu.biblioteca;
 
 
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 
 public class BiblotecaAppTest {
@@ -24,8 +28,13 @@ public class BiblotecaAppTest {
     public void showListBooks() {
 
         BibliotecaApp app = new BibliotecaApp();
+        List<Book> booksExpected = new ArrayList<Book>();
+        booksExpected.add(new Book("Book1", "Author1", 2013));
+        booksExpected.add(new Book("Book2", "Author2", 2014));
+        booksExpected.add(new Book("Book3", "Author3", 2015));
 
-        assertEquals("Book1, Book2, Book3", app.getListBooks());
+        assertEquals(booksExpected, app.getListBooks());
     }
+
 
 }
