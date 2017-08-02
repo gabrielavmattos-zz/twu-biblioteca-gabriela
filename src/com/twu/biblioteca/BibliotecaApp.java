@@ -7,7 +7,13 @@ public class BibliotecaApp {
     }
 
     public String startAplication() {
-        String message = "";
+        String message = "Hi, welcome! Biblioteca is avaliable!";
         return message;
+    }
+
+
+    public String getListBooks() {
+        String listBooks = "Book1, Book2, Book3";
+        return listBooks;
     }
 }
