@@ -27,10 +27,7 @@ public class Book {
         return false;
     }
 
-
-
     public String toString() {
-
         return this.title + " - " + this.author + " - " + this.year;
     }
 }

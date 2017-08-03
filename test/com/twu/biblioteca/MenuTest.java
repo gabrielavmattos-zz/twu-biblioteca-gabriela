@@ -31,4 +31,5 @@ public class MenuTest {
 
         assertEquals("Select a valid option!", menuExpected.selectOption(10));
     }
+
 }

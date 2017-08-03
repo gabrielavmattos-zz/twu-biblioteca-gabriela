@@ -9,10 +9,10 @@ import static org.junit.Assert.assertEquals;
 
 public class BookListTest {
 
+    private BookList bookList = new BookList();
+
     @Test
     public void showListBooks() {
-
-        BookList bookList = new BookList();
 
         List<Book> booksExpected = new ArrayList<Book>();
         booksExpected.add(new Book("Book1", "Author1", 2013));
@@ -26,7 +26,6 @@ public class BookListTest {
     @Test
     public void showListBookAvaliable() {
 
-        BookList bookList = new BookList();
         Book bookCheckout = bookList.getBook(1);
         bookList.checkout(bookCheckout);
 
@@ -42,8 +41,6 @@ public class BookListTest {
     @Test
     public void shouldReturnBookAtPosition() {
 
-        BookList bookList = new BookList();
-
         Book bookExpect = new Book("Book2", "Author2", 2014);
 
         assertEquals(bookExpect, bookList.getBook(1) );
@@ -51,7 +48,6 @@ public class BookListTest {
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void shouldReturnErrorAtInvalidPosition() {
-        BookList bookList = new BookList();
 
         bookList.getBook(10);
     }
@@ -59,23 +55,19 @@ public class BookListTest {
     @Test
     public void checkoutBook () {
 
-        BookList bookList = new BookList();
 
         Book book = bookList.getBook(1);
 
-        assertEquals("Thank you! Enjoy the book.", bookList.checkout(book));
+        assertEquals(true, bookList.checkout(book));
     }
 
     @Test
-    public void checkoutUnavaliableBook () { //question
-
-
-        BookList bookList = new BookList();
+    public void checkoutUnavaliableBook () {
 
         Book book = bookList.getBook(1);
         bookList.checkout(book);
 
-        assertEquals("That book is not available.", bookList.checkout(book));
+        assertEquals(false, bookList.checkout(book));
     }
 
 }

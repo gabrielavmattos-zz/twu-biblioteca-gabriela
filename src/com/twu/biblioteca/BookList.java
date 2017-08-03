@@ -28,17 +28,11 @@ public class BookList {
     }
 
     public Book getBook(int position) {
-
         return books.get(position);
-
     }
 
 
-    public String checkout(Book book) {
-
-        if (booksAvaliable.remove(book))
-            return "Thank you! Enjoy the book.";
-
-        return "That book is not available.";
+    public boolean checkout(Book book) {
+        return booksAvaliable.remove(book);
     }
 }
