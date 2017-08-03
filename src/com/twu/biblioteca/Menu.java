@@ -17,7 +17,7 @@ public class Menu {
 
     public String showMessageCheckout(Book book) {
         
-        if (bookList.checkout(book))
+        if (bookList.checkoutBook(book))
             return "Thank you! Enjoy the book.";
 
         return "That book is not available.";

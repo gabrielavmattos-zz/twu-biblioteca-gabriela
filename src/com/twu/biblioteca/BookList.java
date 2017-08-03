@@ -32,7 +32,16 @@ public class BookList {
     }
 
 
-    public boolean checkout(Book book) {
+    public boolean checkoutBook(Book book) {
         return booksAvaliable.remove(book);
+    }
+
+    public boolean returnBook(Book book) {
+
+        if (!booksAvaliable.contains(book)) {
+            booksAvaliable.add(book);
+            return true;
+        }
+        return false;
     }
 }

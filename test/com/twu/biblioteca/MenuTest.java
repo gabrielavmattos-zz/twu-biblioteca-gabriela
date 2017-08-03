@@ -46,7 +46,7 @@ public class MenuTest {
 
         Menu menuExpected = new Menu();
         Book book = new Book("Book1", "Author1", 2013);
-        menuExpected.getBookList().checkout(book);
+        menuExpected.getBookList().checkoutBook(book);
 
         assertEquals("That book is not available.", menuExpected.showMessageCheckout(book));
     }
