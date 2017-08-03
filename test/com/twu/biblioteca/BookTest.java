@@ -10,7 +10,7 @@ public class BookTest {
     public void checkoutBook () {
         Book bookExpected = new Book("Book1", "Author1", 2013);
 
-        assertEquals(true, bookExpected.checkout());
+        assertEquals("Thank you! Enjoy the book.", bookExpected.checkout());
     }
 
     @Test

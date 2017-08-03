@@ -36,14 +36,14 @@ public class Book {
         return this.title + " - " + this.author + " - " + this.year;
     }
 
-    public boolean checkout() {
+    public String checkout() {
 
         if (avaliable) {
             this.avaliable = false;
-            return true;
+            return "Thank you! Enjoy the book.";
         }
 
-        return false;
+        return "";
     }
 
     public boolean getAvaliable() {
