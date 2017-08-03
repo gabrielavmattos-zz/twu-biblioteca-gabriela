@@ -38,4 +38,15 @@ public class BibliotecaApp {
         }
 
     }
+
+    public List<Book> getListBooksAvaliable() {
+        books.get(1).checkout();
+        List<Book> listBooksAvaliable = new ArrayList<Book>();
+        for (Book book: books) {
+            if (book.getAvaliable())
+                listBooksAvaliable.add(book);
+
+        }
+        return listBooksAvaliable;
+    }
 }

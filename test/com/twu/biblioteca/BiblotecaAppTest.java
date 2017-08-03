@@ -47,11 +47,24 @@ public class BiblotecaAppTest {
    }
 
    @Test
-    public void selectionOptionQuitMenu() {
+   public void selectionOptionQuitMenu() {
 
         BibliotecaApp app = new BibliotecaApp();
 
         assertEquals("Quit", app.menu(0));
+   }
+
+   @Test
+   public void showListBookAvaliable() {
+        BibliotecaApp app = new BibliotecaApp();
+
+        List<Book> booksExpectedAvaliable = new ArrayList<Book>();
+
+        booksExpectedAvaliable.add(new Book("Book1", "Author1", 2013));
+        booksExpectedAvaliable.add(new Book("Book3", "Author3", 2015));
+
+        assertEquals(booksExpectedAvaliable, app.getListBooksAvaliable());
+
    }
 
 }

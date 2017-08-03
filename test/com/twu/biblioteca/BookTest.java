@@ -12,4 +12,13 @@ public class BookTest {
 
         assertEquals(true, bookExpected.checkout());
     }
+
+    @Test
+    public void checkoutUnavaliableBook () { //question
+
+        Book bookExpected = new Book("Book1", "Author1", 2013);
+        bookExpected.checkout();
+
+        assertEquals(false, bookExpected.checkout());
+    }
 }
