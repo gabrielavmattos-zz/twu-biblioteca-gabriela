@@ -20,4 +20,31 @@ public class MovieListTest {
         assertEquals(movieListExpected, movieList.getMovieListAvaliable());
 
     }
+
+    @Test
+    public void shouldReturnMovieAtPosition() {
+
+        MovieList movieList = new MovieList();
+
+        Movie movieExpected = new Movie("Movie1", 2010, "Director1", "Unrated");
+
+        assertEquals(movieExpected, movieList.getMovieAtPosition(0));
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void shouldReturnErrorAtInvalidPosition() {
+
+        MovieList movieList = new MovieList();
+        movieList.getMovieAtPosition(10);
+    }
+
+    @Test
+    public  void shouldGetCheckoutMovie() {
+
+        MovieList movieList = new MovieList();
+
+        Movie movie = movieList.getMovieAtPosition(0);
+
+        assertEquals(true, movieList.checkoutMovie(movie));
+    }
 }
