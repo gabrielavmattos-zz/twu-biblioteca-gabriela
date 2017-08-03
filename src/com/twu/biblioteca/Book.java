@@ -43,7 +43,7 @@ public class Book {
             return "Thank you! Enjoy the book.";
         }
 
-        return "";
+        return "That book is not available.";
     }
 
     public boolean getAvaliable() {

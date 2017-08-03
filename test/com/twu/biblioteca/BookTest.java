@@ -19,6 +19,6 @@ public class BookTest {
         Book bookExpected = new Book("Book1", "Author1", 2013);
         bookExpected.checkout();
 
-        assertEquals(false, bookExpected.checkout());
+        assertEquals("That book is not available.", bookExpected.checkout());
     }
 }
