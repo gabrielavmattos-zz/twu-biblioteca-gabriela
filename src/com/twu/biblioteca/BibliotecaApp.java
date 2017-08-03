@@ -34,7 +34,7 @@ public class BibliotecaApp {
             case 0:
                 return "Quit";
             default:
-                return "";
+                return "Select a valid option!";
         }
 
     }

@@ -55,6 +55,14 @@ public class BiblotecaAppTest {
    }
 
    @Test
+   public void selectionInvalideOptionMenu() {
+
+        BibliotecaApp app = new BibliotecaApp();
+
+        assertEquals("Select a valid option!", app.menu(10));
+   }
+
+   @Test
    public void showListBookAvaliable() {
         BibliotecaApp app = new BibliotecaApp();
 
