@@ -37,13 +37,21 @@ public class BiblotecaAppTest {
     }
 
     @Test
-    public void selectOptionOneMenu() {
+    public void selectOptionListBookMenu() {
 
         BibliotecaApp app = new BibliotecaApp();
 
         assertEquals("List Books", app.menu(1));
 
 
+   }
+
+   @Test
+    public void selectionOptionQuitMenu() {
+
+        BibliotecaApp app = new BibliotecaApp();
+
+        assertEquals("Quit", app.menu(0));
    }
 
 }

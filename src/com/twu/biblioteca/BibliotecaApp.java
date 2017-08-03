@@ -26,11 +26,16 @@ public class BibliotecaApp {
         return books;
     }
 
-    public String menu(int i) {
+    public String menu(int option) {
 
-        if (i == 1) { // Option 1: List books
-            return("List Books");
+        switch (option) {
+            case 1:
+                return "List Books";
+            case 0:
+                return "Quit";
+            default:
+                return "";
         }
-        return "";
+
     }
 }

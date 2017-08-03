@@ -33,4 +33,9 @@ public class Book {
 
         return this.title + " - " + this.author + " - " + this.year;
     }
+
+    public boolean checkout() {
+
+        return true;
+    }
 }
