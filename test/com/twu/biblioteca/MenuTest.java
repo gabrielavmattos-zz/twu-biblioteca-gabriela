@@ -13,7 +13,6 @@ public class MenuTest {
 
         assertEquals("List Books", menuExpeceted.selectOption(1));
 
-
     }
 
     @Test
@@ -25,7 +24,7 @@ public class MenuTest {
     }
 
     @Test
-    public void selectionInvalideOptionMenu() {
+    public void selectionInvalididOptionMenu() {
 
         Menu menuExpected = new Menu();
 
