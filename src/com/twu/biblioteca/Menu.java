@@ -26,4 +26,11 @@ public class Menu {
     public BookList getBookList() {
         return bookList;
     }
+
+    public String showMessageReturn(Book book) {
+
+        if (bookList.returnBook(book))
+            return "Thank you for returning the book.";
+        return "That is not a valid book to return.";
+    }
 }

@@ -51,4 +51,26 @@ public class MenuTest {
         assertEquals("That book is not available.", menuExpected.showMessageCheckout(book));
     }
 
+    @Test
+    public void shouldMessageSuccessfulReturn() {
+
+        Menu menuExpected = new Menu();
+        Book book = new Book("Book1", "Author1", 2013);
+        menuExpected.getBookList().checkoutBook(book);
+        menuExpected.getBookList().returnBook(book);
+
+        assertEquals("Thank you for returning the book.", menuExpected.showMessageReturn(book));
+
+    }
+
+    @Test
+    public void shouldMessageUnsuccessfulReturn() {
+
+        Menu menuExpected = new Menu();
+        Book book = new Book("Book1", "Author1", 2013);
+        menuExpected.getBookList().returnBook(book);
+
+        assertEquals("That is not a valid book to return.", menuExpected.showMessageReturn(book));
+    }
+
 }
