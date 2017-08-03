@@ -28,7 +28,7 @@ public class BookListTest {
 
         BookList bookList = new BookList();
         Book bookCheckout = bookList.getBook(1);
-        bookCheckout.checkout();
+        bookList.checkout(bookCheckout);
 
         List<Book> booksExpectedAvaliable = new ArrayList<Book>();
 
@@ -54,6 +54,28 @@ public class BookListTest {
         BookList bookList = new BookList();
 
         bookList.getBook(10);
+    }
+
+    @Test
+    public void checkoutBook () {
+
+        BookList bookList = new BookList();
+
+        Book book = bookList.getBook(1);
+
+        assertEquals("Thank you! Enjoy the book.", bookList.checkout(book));
+    }
+
+    @Test
+    public void checkoutUnavaliableBook () { //question
+
+
+        BookList bookList = new BookList();
+
+        Book book = bookList.getBook(1);
+        bookList.checkout(book);
+
+        assertEquals("That book is not available.", bookList.checkout(book));
     }
 
 }
