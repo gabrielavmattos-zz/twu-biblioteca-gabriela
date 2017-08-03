@@ -32,4 +32,23 @@ public class MenuTest {
         assertEquals("Select a valid option!", menuExpected.selectOption(10));
     }
 
+    @Test
+    public void shouldMessageSuccessfulCheckout() {
+
+        Menu menuExpected = new Menu();
+        Book book = new Book("Book1", "Author1", 2013);
+
+        assertEquals("Thank you! Enjoy the book.", menuExpected.showMessageCheckout(book));
+    }
+
+    @Test
+    public void shouldMessageUnsuccessfulCheckout() {
+
+        Menu menuExpected = new Menu();
+        Book book = new Book("Book1", "Author1", 2013);
+        menuExpected.getBookList().checkout(book);
+
+        assertEquals("That book is not available.", menuExpected.showMessageCheckout(book));
+    }
+
 }
