@@ -8,7 +8,6 @@ public class BookList {
 
     private List<Book> books;
 
-    private  List<Book> booksAvaliable;
 
     BookList() {
         this.books =  Arrays.asList(
@@ -16,15 +15,10 @@ public class BookList {
                 new Book("Book2", "Author2", 2014),
                 new Book("Book3", "Author3", 2015));
 
-        this.booksAvaliable = new ArrayList<Book>(books);
     }
 
     public List<Book> getListBooks() {
         return books;
-    }
-
-    public List<Book> getListBooksAvaliable() {
-        return booksAvaliable;
     }
 
     public Book getBook(int position) {
@@ -32,16 +26,6 @@ public class BookList {
     }
 
 
-    public boolean checkoutBook(Book book) {
-        return booksAvaliable.remove(book);
-    }
 
-    public boolean returnBook(Book book) {
 
-        if (!booksAvaliable.contains(book)) {
-            booksAvaliable.add(book);
-            return true;
-        }
-        return false;
-    }
 }

@@ -23,20 +23,7 @@ public class BookListTest {
     }
 
 
-    @Test
-    public void showListBookAvaliable() {
 
-        Book bookCheckout = bookList.getBook(1);
-        bookList.checkoutBook(bookCheckout);
-
-        List<Book> booksExpectedAvaliable = new ArrayList<Book>();
-
-        booksExpectedAvaliable.add(new Book("Book1", "Author1", 2013));
-        booksExpectedAvaliable.add(new Book("Book3", "Author3", 2015));
-
-        assertEquals(booksExpectedAvaliable, bookList.getListBooksAvaliable());
-
-    }
 
     @Test
     public void shouldReturnBookAtPosition() {
@@ -52,31 +39,5 @@ public class BookListTest {
         bookList.getBook(10);
     }
 
-    @Test
-    public void checkoutBook() {
-
-
-        Book book = bookList.getBook(1);
-
-        assertEquals(true, bookList.checkoutBook(book));
-    }
-
-    @Test
-    public void checkoutUnavaliableBook() {
-
-        Book book = bookList.getBook(1);
-        bookList.checkoutBook(book);
-
-        assertEquals(false, bookList.checkoutBook(book));
-    }
-
-    @Test
-    public void returnBook() {
-
-        Book book = bookList.getBook(1);
-        bookList.checkoutBook(book);
-
-        assertEquals(true, bookList.returnBook(book));
-    }
 
 }

@@ -45,7 +45,9 @@ public class MenuTest {
 
         Menu menuExpected = new Menu();
         Book book = new Book("Book1", "Author1", 2013);
-        menuExpected.getBookList().checkoutBook(book);
+        User user = new User ("111-1111", "xxxx" , false);
+
+        menuExpected.getCheckout().checkoutBook(user, book);
 
         assertEquals("That book is not available.", menuExpected.showMessageCheckout(book));
     }
@@ -55,8 +57,10 @@ public class MenuTest {
 
         Menu menuExpected = new Menu();
         Book book = new Book("Book1", "Author1", 2013);
-        menuExpected.getBookList().checkoutBook(book);
-        menuExpected.getBookList().returnBook(book);
+        User user = new User ("111-1111", "xxxx" , false);
+
+        menuExpected.getCheckout().checkoutBook(user, book);
+        menuExpected.getCheckout().returnBook(book);
 
         assertEquals("Thank you for returning the book.", menuExpected.showMessageReturn(book));
 
@@ -67,7 +71,7 @@ public class MenuTest {
 
         Menu menuExpected = new Menu();
         Book book = new Book("Book1", "Author1", 2013);
-        menuExpected.getBookList().returnBook(book);
+        menuExpected.getCheckout().returnBook(book);
 
         assertEquals("That is not a valid book to return.", menuExpected.showMessageReturn(book));
     }

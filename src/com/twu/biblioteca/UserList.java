@@ -9,12 +9,17 @@ public class UserList {
 
     public UserList() {
         users = Arrays.asList(
-                new User("111-1111", "xxxx", 0));
+                new User("111-1111", "xxxx", true),
+                new User("222-2222", "YYYY", false));
     }
     public boolean loginUser(User user) {
 
         System.out.println(user);
         return users.contains(user);
 
+    }
+
+    public User getUser (int position) {
+        return users.get(position);
     }
 }

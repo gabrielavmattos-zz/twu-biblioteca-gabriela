@@ -3,12 +3,12 @@ package com.twu.biblioteca;
 public class User {
     private String login;
     private String password;
-    private int type;
+    private boolean isLibrarian;
 
-    public User(String login, String password, int type) {
+    public User(String login, String password, boolean isLibrarian) {
         this.login = login;
         this.password = password;
-        this.type = type;
+        this.isLibrarian = isLibrarian;
     }
 
     @Override
@@ -30,9 +30,6 @@ public class User {
     }
 
     public boolean isLibrarian() {
-
-        if (type == 0)
-            return true;
-        return false;
+        return isLibrarian;
     }
 }

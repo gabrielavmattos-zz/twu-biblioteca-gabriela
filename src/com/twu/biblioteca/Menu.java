@@ -3,6 +3,8 @@ package com.twu.biblioteca;
 public class Menu {
     
     private BookList bookList = new BookList();
+    private User user;
+    private Checkout checkout = new Checkout();
 
     public String selectOption(int option) {
         switch (option) {
@@ -17,7 +19,7 @@ public class Menu {
 
     public String showMessageCheckout(Book book) {
         
-        if (bookList.checkoutBook(book))
+        if (checkout.checkoutBook(user, book))
             return "Thank you! Enjoy the book.";
         return "That book is not available.";
     }
@@ -28,8 +30,12 @@ public class Menu {
 
     public String showMessageReturn(Book book) {
 
-        if (bookList.returnBook(book))
+        if (checkout.returnBook(book))
             return "Thank you for returning the book.";
         return "That is not a valid book to return.";
+    }
+
+    public Checkout getCheckout() {
+        return checkout;
     }
 }

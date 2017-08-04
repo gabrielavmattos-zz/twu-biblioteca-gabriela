@@ -8,7 +8,7 @@ public class UserTest {
 
     @Test
     public void shouldCheckoutTypeUserIsLibrarian() {
-        User user = new User("111-1111", "xxxx", 0);
+        User user = new User("111-1111", "xxxx", true);
 
         assertEquals(true, user.isLibrarian());
 
