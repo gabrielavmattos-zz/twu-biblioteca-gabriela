@@ -21,6 +21,8 @@ public class CheckoutTest {
     }
 
 
+
+
     @Test
     public void checkoutBook() {
         Checkout checkout = new Checkout();

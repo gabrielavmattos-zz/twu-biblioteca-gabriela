@@ -43,8 +43,15 @@ public class Checkout {
         return false;
     }
 
-    public User getWhoCkeckout(Book book) {
+    public User getWhoCkeckout(Book bookCheckout) {
 
-        //checkouts.values();
+        for (User user : checkouts.keySet()) {
+            for (Book book : checkouts.get(user)) {
+                if (book.equals(bookCheckout))
+                    return user;
+            }
+        }
+
+        return null;
     }
 }
