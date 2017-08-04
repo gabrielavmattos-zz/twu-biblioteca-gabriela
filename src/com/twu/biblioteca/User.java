@@ -4,11 +4,23 @@ public class User {
     private String login;
     private String password;
     private boolean isLibrarian;
+    private String name;
+    private String email;
+    private String phoneNumber;
 
     public User(String login, String password, boolean isLibrarian) {
         this.login = login;
         this.password = password;
         this.isLibrarian = isLibrarian;
+    }
+
+    public User(String login, String password, boolean isLibrarian, String name, String email, String phoneNumber) {
+        this.login = login;
+        this.password = password;
+        this.isLibrarian = isLibrarian;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
     }
 
     @Override
@@ -31,5 +43,9 @@ public class User {
 
     public boolean isLibrarian() {
         return isLibrarian;
+    }
+
+    public String getInformationUser() {
+        return this.name + " - " + this.email + " - " + this.phoneNumber;
     }
 }
