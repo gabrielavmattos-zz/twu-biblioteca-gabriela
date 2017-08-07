@@ -9,10 +9,11 @@ import static org.junit.Assert.assertEquals;
 
 public class MovieListTest {
 
+    private MovieList movieList = new MovieList();
+
     @Test
     public void shouldReturnMovieListAvaliable() {
 
-        MovieList movieList = new MovieList();
         List<Movie> movieListExpected = new ArrayList<Movie>();
 
         movieListExpected.add(new Movie("Movie1", 2010, "Director1", "Unrated"));
@@ -24,8 +25,6 @@ public class MovieListTest {
     @Test
     public void shouldReturnMovieAtPosition() {
 
-        MovieList movieList = new MovieList();
-
         Movie movieExpected = new Movie("Movie1", 2010, "Director1", "Unrated");
 
         assertEquals(movieExpected, movieList.getMovieAtPosition(0));
@@ -34,14 +33,11 @@ public class MovieListTest {
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void shouldReturnErrorAtInvalidPosition() {
 
-        MovieList movieList = new MovieList();
         movieList.getMovieAtPosition(10);
     }
 
     @Test
     public  void shouldGetCheckoutMovie() {
-
-        MovieList movieList = new MovieList();
 
         Movie movie = movieList.getMovieAtPosition(0);
 

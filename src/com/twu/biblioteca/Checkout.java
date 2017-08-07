@@ -34,6 +34,7 @@ public class Checkout {
     public List<Book> getListBooksAvaliable() {
         return booksAvaliable;
     }
+
     public boolean returnBook(Book book) {
 
         if (!booksAvaliable.contains(book)) {

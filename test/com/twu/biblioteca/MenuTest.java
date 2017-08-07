@@ -6,27 +6,23 @@ import static org.junit.Assert.assertEquals;
 
 public class MenuTest {
 
+    private Menu menuExpected = new Menu();
+
     @Test
-    public void selectOptionListBookMenu() {
+    public void shouldMessageSelectOptionListBookMenu() {
 
-        Menu menuExpeceted = new Menu();
-
-        assertEquals("List Books", menuExpeceted.selectOption(1));
+        assertEquals("List Books", menuExpected.selectOption(1));
 
     }
 
     @Test
-    public void selectionOptionQuitMenu() {
-
-        Menu menuExpected = new Menu();
+    public void shouldMessageCelectionOptionQuitMenu() {
 
         assertEquals("Quit", menuExpected.selectOption(0));
     }
 
     @Test
-    public void selectionInvalididOptionMenu() {
-
-        Menu menuExpected = new Menu();
+    public void shouldMessageSelectionInvalididOptionMenu() {
 
         assertEquals("Select a valid option!", menuExpected.selectOption(10));
     }
@@ -34,7 +30,6 @@ public class MenuTest {
     @Test
     public void shouldMessageSuccessfulCheckout() {
 
-        Menu menuExpected = new Menu();
         Book book = new Book("Book1", "Author1", 2013);
 
         assertEquals("Thank you! Enjoy the book.", menuExpected.showMessageCheckout(book));
@@ -43,7 +38,6 @@ public class MenuTest {
     @Test
     public void shouldMessageUnsuccessfulCheckout() {
 
-        Menu menuExpected = new Menu();
         Book book = new Book("Book1", "Author1", 2013);
         User user = new User ("111-1111", "xxxx" , false);
 
@@ -55,12 +49,10 @@ public class MenuTest {
     @Test
     public void shouldMessageSuccessfulReturn() {
 
-        Menu menuExpected = new Menu();
         Book book = new Book("Book1", "Author1", 2013);
         User user = new User ("111-1111", "xxxx" , false);
 
         menuExpected.getCheckout().checkoutBook(user, book);
-        menuExpected.getCheckout().returnBook(book);
 
         assertEquals("Thank you for returning the book.", menuExpected.showMessageReturn(book));
 
@@ -69,7 +61,6 @@ public class MenuTest {
     @Test
     public void shouldMessageUnsuccessfulReturn() {
 
-        Menu menuExpected = new Menu();
         Book book = new Book("Book1", "Author1", 2013);
         menuExpected.getCheckout().returnBook(book);
 

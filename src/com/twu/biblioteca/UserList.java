@@ -14,7 +14,6 @@ public class UserList {
     }
     public boolean loginUser(User user) {
 
-        System.out.println(user);
         return users.contains(user);
 
     }

@@ -9,9 +9,10 @@ import static org.junit.Assert.assertEquals;
 
 public class CheckoutTest {
 
+    private Checkout checkout = new Checkout();
+
     @Test
     public void shouldReturnWhoCheckout() {
-        Checkout checkout = new Checkout();
 
         User userExpect = new User ("222-2222", "yyyy", true);
         Book book = new Book("Book2", "Author2", 2014);
@@ -24,8 +25,7 @@ public class CheckoutTest {
 
 
     @Test
-    public void checkoutBook() {
-        Checkout checkout = new Checkout();
+    public void shouldReturnTrueCheckoutBook() {
 
         Book book = new Book("Book2", "Author2", 2014);
         User user = new User ("111-1111", "xxxx" , false);
@@ -36,8 +36,7 @@ public class CheckoutTest {
 
 
     @Test
-    public void showListBookAvaliable() {
-        Checkout checkout = new Checkout();
+    public void shouldShowListBookAvaliable() {
 
         Book book = new Book("Book2", "Author2", 2014);
         User user = new User ("111-1111", "xxxx" , false);
@@ -54,8 +53,7 @@ public class CheckoutTest {
 
 
    @Test
-    public void checkoutUnavaliableBook() {
-        Checkout checkout = new Checkout();
+    public void shouldFalseCheckoutUnavaliableBook() {
 
         Book book = new Book("Book2", "Author2", 2014);
         User user = new User ("111-1111", "xxxx" , false);
@@ -65,8 +63,7 @@ public class CheckoutTest {
     }
 
     @Test
-    public void returnBook() {
-        Checkout checkout = new Checkout();
+    public void shouldTrueReturnBook() {
 
         Book book = new Book("Book2", "Author2", 2014);
         User user = new User ("111-1111", "xxxx" , false);
